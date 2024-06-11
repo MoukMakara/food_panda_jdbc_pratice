@@ -6,20 +6,19 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-
-//        new CustomerDaoImpl()
-//                .addNewCustomer(new Customer(
-//                        1,
-//                        "Mouk Makara",
-//                        "makaramouk@gmail.com",
-//                        "!@#$%^&**&^%$#@!",
-//                        false,
-//                        Date.valueOf(LocalDate.now())
-//                ));
+        new CustomerDaoImpl()
+                .addNewCustomer(new Customer(
+                        1,
+                        "Mouk Makara",
+                        "makaramouk@gmail.com",
+                        "!@#$%^&**&^%$#@!",
+                        false,
+                        Date.valueOf(LocalDate.now())
+                ));
         /**
          * use @Builder
          * */
-        Customer newCustomer = new Customer().builder()
+        Customer newCustomer1 = new Customer().builder()
                 .id(2)
                 .name("Pich Lyhour")
                 .email("pichlyhour@gmail.com")
@@ -27,7 +26,17 @@ public class Main {
                 .isDeleted(false)
                 .createdDate(Date.valueOf(LocalDate.now()))
                 .build();
-        new CustomerDaoImpl().addNewCustomer(newCustomer);
+        Customer newCustomer2 = new Customer().builder()
+                .id(3)
+                .name("Chan Bopha")
+                .email("chanbopha@gmail.com")
+                .password("*&^%$#@!!@#$%^&")
+                .isDeleted(false)
+                .createdDate(Date.valueOf(LocalDate.now()))
+                .build();
+
+        new CustomerDaoImpl().addNewCustomer(newCustomer1);
+        new CustomerDaoImpl().addNewCustomer(newCustomer2);
 
         /**
          * queryAllCustomers
