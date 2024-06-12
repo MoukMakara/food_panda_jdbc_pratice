@@ -15,6 +15,6 @@ public class Order {
     private Integer id;
     private String orderName;
     private String orderDescription;
-    private Date orderedDate;
+    private Date orderedAt;
     private Customer customer;
 }

@@ -9,4 +9,5 @@ public interface CustomerDao {
     int deleteCustomerById(int id);
     int updateCustomer(int id);
     int addNewCustomer(Customer customer);
+    Customer findCustomerById(Integer id);
 }
