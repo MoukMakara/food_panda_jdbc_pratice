@@ -94,13 +94,13 @@ public class ProductDaoImpl implements ProductDao {
             Product product = findProductById(id);
             if(product != null){
                 System.out.print("input product_name: ");
-                String product_name = new Scanner(System.in).next();
+                String product_name = new Scanner(System.in).nextLine();
                 System.out.print("input product_code: ");
-                String product_code = new Scanner(System.in).next();
+                String product_code = new Scanner(System.in).nextLine();
                 System.out.print("input isDeleted: ");
                 boolean isDeleted = new Scanner(System.in).nextBoolean();
                 System.out.print("input product_description: ");
-                String product_description  = new Scanner(System.in).next();
+                String product_description  = new Scanner(System.in).nextLine();
 
                 preparedStatement.setString(1, product_name);
                 preparedStatement.setString(2, product_code);

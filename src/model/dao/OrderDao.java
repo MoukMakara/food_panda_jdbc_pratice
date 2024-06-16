@@ -9,5 +9,5 @@ public interface OrderDao {
     int addNewOrder(Order order);
     int updateOrderById(Integer id);
     int deleteOrderById(Integer id);
-    int findOrderById(Integer id);
+    Order findOrderById(Integer id);
 }
