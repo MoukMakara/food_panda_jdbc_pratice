@@ -87,11 +87,11 @@ public class CustomerDaoImpl implements CustomerDao{
             Customer customer = findCustomerById(id);
             if(customer != null){
                 System.out.print("input name: ");
-                String name = new Scanner(System.in).next();
+                String name = new Scanner(System.in).nextLine();
                 System.out.print("input email: ");
-                String email = new Scanner(System.in).next();
+                String email = new Scanner(System.in).nextLine();
                 System.out.print("input password: ");
-                String password = new Scanner(System.in).next();
+                String password = new Scanner(System.in).nextLine();
                 System.out.print("input isDeleted: ");
                 boolean isDeleted = new Scanner(System.in).nextBoolean();
 
