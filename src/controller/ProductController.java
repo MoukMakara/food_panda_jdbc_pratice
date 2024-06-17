@@ -1,31 +1,30 @@
 package controller;
 
-import model.dao.ProductDao;
-import model.dao.ProductDaoImpl;
 import model.entity.Product;
+import model.service.ProductService;
 
 import java.util.List;
 
 public class ProductController {
-    private final ProductDao productDao = new ProductDaoImpl();
+    private final ProductService productService = new ProductService();
 
     public List<Product> getAllProducts() {
-        return productDao.queryAllProducts();
+        return productService.getAllProducts();
     }
 
     public void addNewProduct(Product product) {
-        productDao.addNewProduct(product);
+        productService.addNewProduct(product);
     }
 
     public void updateProduct(Integer id) {
-        productDao.updateProductById(id);
+        productService.updateProduct(id);
     }
 
     public void deleteProduct(Integer id) {
-        productDao.deleteProductById(id);
+        productService.deleteProduct(id);
     }
 
     public Product getProductById(Integer id) {
-        return productDao.findProductById(id);
+        return productService.getProductById(id);
     }
 }

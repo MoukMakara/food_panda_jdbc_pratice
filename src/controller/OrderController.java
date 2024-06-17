@@ -1,31 +1,30 @@
 package controller;
 
-import model.dao.OrderDao;
-import model.dao.OrderDaoImpl;
 import model.entity.Order;
+import model.service.OrderService;
 
 import java.util.List;
 
 public class OrderController {
-    private final OrderDao orderDao = new OrderDaoImpl();
+    private final OrderService orderService = new OrderService();
 
     public List<Order> getAllOrders() {
-        return orderDao.queryAllOrders();
+        return orderService.getAllOrders();
     }
 
     public void addNewOrder(Order order) {
-        orderDao.addNewOrder(order);
+        orderService.addNewOrder(order);
     }
 
     public void updateOrder(Integer id) {
-        orderDao.updateOrderById(id);
+        orderService.updateOrder(id);
     }
 
     public void deleteOrder(Integer id) {
-        orderDao.deleteOrderById(id);
+        orderService.deleteOrder(id);
     }
 
     public Order getOrderById(Integer id) {
-        return orderDao.findOrderById(id);
+        return orderService.getOrderById(id);
     }
 }

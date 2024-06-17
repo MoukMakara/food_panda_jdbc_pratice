@@ -1,40 +1,34 @@
 package controller;
 
 import mapper.Mapper;
-import model.dao.CustomerDao;
-import model.dao.CustomerDaoImpl;
 import model.dto.CreateCustomerDto;
 import model.dto.CustomerDto;
 import model.entity.Customer;
+import model.service.CustomerService;
 
 import java.util.List;
 
 public class CustomerController {
-    private final CustomerDao customerDao = new CustomerDaoImpl();
+    private final CustomerService customerService = new CustomerService();
 
     public List<Customer> getAllCustomers() {
-        return customerDao.queryAllCustomers();
+        return customerService.getAllCustomers();
     }
 
     public void addNewCustomer(CreateCustomerDto createCustomerDto) {
-        Customer customer = Customer.builder()
-                .name(createCustomerDto.name())
-                .email(createCustomerDto.email())
-                .password(createCustomerDto.password())
-                .build();
-        customerDao.addNewCustomer(customer);
+        customerService.addNewCustomer(createCustomerDto);
     }
 
     public void updateCustomer(Integer id) {
-        customerDao.updateCustomer(id);
+        customerService.updateCustomer(id);
     }
 
     public void deleteCustomer(Integer id) {
-        customerDao.deleteCustomerById(id);
+        customerService.deleteCustomer(id);
     }
 
     public CustomerDto getCustomerDto(Integer id) {
-        Customer customer = customerDao.findCustomerById(id);
+        Customer customer = customerService.getCustomerById(id);
         return Mapper.fromCustomerToCustomerDto(customer);
     }
 }
